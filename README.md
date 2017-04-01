@@ -7,6 +7,7 @@ This README would normally document whatever steps are necessary to get your app
 * Quick summary
 Project name: w4111-proj1
 This is an web-front-end application project, which is a required project in COMS W4111 Introduction to Databases.
+This application is implemented by flask in Python.
 
 * Version
 1.1 - 4/1/2017
