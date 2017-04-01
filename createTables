@@ -1,4 +1,6 @@
 -- SQL statements used in part 2
+-- @author: bangda sun
+-- @date: 3/3/2017
 -- Create table Division
 CREATE TABLE Division
 (
