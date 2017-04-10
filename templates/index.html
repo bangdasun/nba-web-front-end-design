@@ -28,11 +28,23 @@
 	</p>
 	</form>
 	
-	<p>Player information and statistics search </p>
+	<p>Team information search </p>
+	<form method = "POST" action="/player_team_query">
+	<p>Team: <input type ="text" name="name"> <input type="submit" value="Submit"></p>
+	</form>
+ 	
+	<p>Player information search </p>
 
 	<form method="POST" action="/player_query">
 	<p>Player name: <input type="text" name="name"> <input type="submit" value="Submit"></p>
 	</form>
+	
+	<p>Player statistics search </p>
+
+	<form method="POST" action="/player_stat_query">
+	<p>Points >= <input type="text" name="points" size=3> Rebounds >= <input type="text" name="rebounds" size=3> <input type="submit" value="Submit"></p>
+	</form>
+	
 	
 	<hr>
 	
