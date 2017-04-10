@@ -152,19 +152,38 @@ def index():
 @app.route('/team_query', methods=['POST'])
 def team_query():
 	division = request.form['name']
-	cursor = g.conn.execute("SELECT t.tname, t.city FROM team_division td JOIN team t \
-							ON td.tname = t.tname WHERE dname = " \
-							+ "'" + str(division) + "'" + " ORDER BY t.tname")
+	cursor   = g.conn.execute("SELECT t.tname, t.city FROM team_division td JOIN team t \
+								ON td.tname = t.tname WHERE dname = " \
+								+ "'" + str(division) + "'" + " ORDER BY t.tname")
 	tnames = []
 	cities = []
 	for result in cursor:
 		tnames.append(result[0])  
 		cities.append(result[1])
 	cursor.close()
-	data = np.array([tnames, cities])
+	data    = np.array([tnames, cities])
 	context = dict(data = data.T, division = division)
 	return render_template('team_query.html', **context)
 
+# Query player info in a certain team 
+@app.route('/player_team_query', methods=['POST'])
+def player_team_query():
+	tname  = request.form['name']
+	cursor = g.conn.execute("SELECT p.pname, p.position, p.critizenship \
+							FROM player p JOIN team t ON p.tname = t.tname \
+							WHERE t.tname = " + "'" + str(tname) + "'")
+	pnames       = []
+	position 	 = []
+	critizenship = []
+	for result in cursor:
+		pnames.append(result[0])
+		position.append(result[1])
+		critizenship.append(result[2])
+	cursor.close()
+	data = np.array([pnames, position, critizenship])
+	context = dict(data = data.T, tname = tname)
+	return render_template('player_team_query.html', **context)
+	
 # Query player based on provided player name
 @app.route('/player_query', methods=['POST'])
 def player_query():
@@ -179,6 +198,26 @@ def player_query():
 	context = dict(data = result, player = player)
 	return render_template('player_query.html', **context)
 
+@app.route('/player_stat_query', methods=['POST'])
+def player_stat_query():
+	points = request.form['points']
+	rebounds = request.form['rebounds']
+	cursor = g.conn.execute("SELECT pname, points_pg, total_rb_pg, assist_pg, steal_pg, block_pg \
+							FROM play_game \
+							WHERE points_pg >= " + str(points) + 
+							" AND total_rb_pg >= " + str(rebounds))
+	pnames = []
+	points = []
+	rebounds = []
+	for result in cursor:
+		pnames.append(result[0])
+		points.append(result[1])
+		rebounds.append(result[2])
+	cursor.close()
+	data = np.array([pnames, points, rebounds])
+	context = dict(data = data.T)
+	return render_template('player_stat_query.html', **context)
+	
 @app.route('/login')
 def login():
     abort(401)
