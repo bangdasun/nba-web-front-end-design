@@ -1,0 +1,23 @@
+<html>
+<style>
+    body{ 
+		font-size: 12pt;
+		font-family: calibri;
+    }
+</style>
+
+<body>
+
+	<h1>Player Statistics</h1>
+
+	<hr>
+	
+	<div>
+		{% for n in data %}
+			<li> <b> name: </b> {{n[0]}}  | <b> points: </b> {{n[1]}} | <b>  rebounds:  </b> {{n[2]}} </li> 
+		{% endfor %}
+	</div>
+
+</body>
+
+</html>
