@@ -6,11 +6,18 @@ This README would normally document whatever steps are necessary to get your app
 
 * Quick summary
 Project name: w4111-proj1
+
 This is an web-front-end application project, which is a required project in COMS W4111 Introduction to Databases.
+
 Application details:
+
 (1) Design NBA 2015-2016 season player - team - game information database, using E/R diagram to visualize 4 entities and 3 relations
+
 (2) Created data tables and inserted values using SQL, built the database using postgreSQL and deployed it on Google Cloud Platform
+
 (3) Developed web front-end application using flask in Python which enables users to search division, team information and player statistics using HTML drop down, etc
+
+NOTE: there are still some improvement can be done to capture the situations about exception.
 
 * Version
 1.1 - 4/1/2017
@@ -24,6 +31,7 @@ Application details:
 * Dependencies
 * Database configuration
 * How to run tests
+
 To run the application, in windows cmd line:
 
   python server.py
