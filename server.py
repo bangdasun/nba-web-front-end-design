@@ -236,11 +236,11 @@ def run(debug, threaded, host, port):
 	This function handles command line parameters.
 	Run the server using:
 
-    python server.py
+    		python server.py
 
 	Show the help text using:
 
-    python server.py --help
+    		python server.py --help
 
 	"""
 	HOST, PORT = host, port
