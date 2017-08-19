@@ -1,0 +1,33 @@
+p {
+  font-size: 16px;
+  color: black;
+  font-family: Calibri;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 26px;
+  color: red;
+  font-family: Verdana;
+  background-color: #BFC5C9;
+}
+
+h3 {
+  font-size: 20px;
+  color: red;
+  font-family: Garamond;
+}
+
+h4 {
+	font-size: 18px;
+	color: black;
+	font-family: Calibri;
+}
+
+div {
+  color: red;
+  height: 50px;
+  width: 100px;
+  font-family: Garamond;
+  background-color: #BFC5C9;
+}

@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <!-- style -->
+	<!-- insert basis.css -->
+    <link rel="stylesheet" href="other-pages.css" type="text/css">
+	<title> </title>
+  </head>
+
+<body>
+
+	<h1>Player Statistics</h1>
+
+	<hr>
+	
+	<div>
+		{% for n in data %}
+			<li> <b> name: </b> {{n[0]}}  | <b> points: </b> {{n[1]}} | <b>  rebounds:  </b> {{n[2]}} </li> 
+		{% endfor %}
+	</div>
+
+</body>
+
+</html>

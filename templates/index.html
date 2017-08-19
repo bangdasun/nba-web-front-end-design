@@ -1,0 +1,110 @@
+<html>
+
+  <head>
+    <!-- style -->
+	<!-- insert basis.css -->
+    <link rel="stylesheet" href="index.css" type="text/css">
+	<title> </title>
+  </head>
+
+
+  <body>
+	<h1>NBA data information search system (2015-2016 season)</h1>
+	
+	<hr size = "10px" noshade/>
+	
+	<p>Division information Search </p>
+	
+	<form method="POST" action="/team_query">
+	<p>Division: 
+	<select name="name"> 
+	  <option value="Atlantic"> Atlantic </option>
+	  <option value="Central"> Central </option>
+	  <option value="Northwest"> Northwest </option>
+	  <option value="Pacific"> Pacific </option>
+	  <option value="Southeast"> Southeast </option>
+	  <option value="Southwest"> Southwest </option>
+	</select>
+	<input type="submit" value="Submit">
+	</p>
+	</form>
+	
+	<p>Team information search </p>
+	<form method = "POST" action="/player_team_query">
+	<p>Team: <input type ="text" name="name"> <input type="submit" value="Submit"></p>
+	</form>
+ 	
+	<p>Player information search </p>
+
+	<form method="POST" action="/player_query">
+	<p>Player name: <input type="text" name="name"> <input type="submit" value="Submit"></p>
+	</form>
+	
+	<p>Player statistics search </p>
+
+	<form method="POST" action="/player_stat_query">
+	<p>Points >= <input type="text" name="points" size=3> Rebounds >= <input type="text" name="rebounds" size=3> <input type="submit" value="Submit"></p>
+	</form>
+	
+	
+	<hr>
+	
+	<h3> Season high statistics leaderboard </h3>
+	
+	<ul>
+	<li>
+	<h4> Points per game: </h4>
+	</li>
+	
+	<div>
+	  {% for n in data %}
+		<div>{{n}}</div>
+	  {% endfor %}
+	</div>
+	
+	<li>
+	<h4> Rebounds per game: </h4>
+	</li>
+	
+	<div>
+	  {% for n in data2 %}
+		<div>{{n}}</div>
+	  {% endfor %}
+	</div>
+	
+	<li>
+	<h4> Assists per game: </h4>
+	</li>
+	
+	<div>
+	  {% for n in data3 %}
+		<div>{{n}}</div>
+	  {% endfor %}
+	</div>
+	
+	<li>
+	<h4> Steals per game: </h4>
+	</li>
+	
+	<div>
+	  {% for n in data4 %}
+		<div>{{n}}</div>
+	  {% endfor %}
+	</div>
+	
+	<li>
+	<h4> Blocks per game: </h4>
+	</li>
+	
+	<div>
+	  {% for n in data5 %}
+		<div>{{n}}</div>
+      {% endfor %}
+	</div>
+	
+	
+	</ul>
+	
+  </body>
+
+</html>

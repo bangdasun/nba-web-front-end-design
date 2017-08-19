@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <!-- style -->
+	<!-- insert basis.css -->
+    <link rel="stylesheet" href="other-pages.css" type="text/css">
+	<title> </title>
+  </head>
+
+  <body>
+
+	<h1>Team Information at division - {{division}}</h1>
+
+	<hr>
+	
+	<div>
+	  {% for n in data %}
+		<li> <b> team: </b> {{n[0]}}  | <b> city: </b>{{n[1]}}</li>
+	  {% endfor %}
+	</div>
+
+  </body>
+
+</html>
