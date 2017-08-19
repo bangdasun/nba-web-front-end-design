@@ -20,8 +20,6 @@ To run the application, type in terminal or windows cmd line:
  
 The application will run locally on http://localhost:8111/
 
-* Deployment instructions
-
 ### Description of web pages
 
 1. Division information queries
