@@ -16,11 +16,9 @@ NOTE: there are still some improvement can be done to capture the situations abo
 
 To run the application, type in terminal or windows cmd line:
 
-  python server.py
+  `python server.py`
  
-The application will run locally on 
-
-  http://localhost:8111/
+The application will run locally on http://localhost:8111/
 
 * Deployment instructions
 
